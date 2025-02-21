@@ -1,13 +1,26 @@
 import {Tabs} from "expo-router";
-
+import {Ionicons} from "@expo/vector-icons";
 export default function tabslayout() {
   return (
-     <Tabs>
+     <Tabs
+     screenOptions={{
+        tabBarActiveBackgroundColor: "#ffd33d",
+        headerStyle: {
+            backgroundColor: "#25292e",
+        },
+     }}
+     >
       <Tabs.Screen
        name= "index"
         options={{
         headerTitle: "roy parcero",
-        HeaderLeft: {} => <></>,
+       tabBarIcon: ({focused, color }) => (
+         <Ionicons
+          name={focused ? "home-sharp" : "home-outline"}
+          color={color}
+        size={30}
+         />
+       ),
       }}
       />
       <Tabs.Screen
